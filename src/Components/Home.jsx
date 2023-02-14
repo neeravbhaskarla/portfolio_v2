@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 const Home = () =>{
+    
     return (
-        <h1>Hi</h1>
+        <>
+            Hi
+        </>
     )
 }
 
