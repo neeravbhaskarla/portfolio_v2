@@ -3,7 +3,11 @@ import '../styles/Projects.scss'
 
 function Projects() {
   return (
-    <div>Projects</div>
+    <>
+      <div className="projects-wrapper">
+        <h1>Projects</h1>
+      </div>
+    </>
   )
 }
 

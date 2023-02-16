@@ -3,7 +3,11 @@ import '../styles/About.scss'
 
 function About() {
   return (
-    <div>About</div>
+    <>
+      <div className="about-wrapper">
+        <h1>About</h1>
+      </div>
+    </>
   )
 }
 
