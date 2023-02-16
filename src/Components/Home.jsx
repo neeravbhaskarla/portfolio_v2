@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar';
+import "../styles/Home.scss"
 
 const Home = () =>{
     
@@ -7,7 +8,7 @@ const Home = () =>{
         <>
             <div className="home-wrapper">
                 <NavBar/>
-                <h1>HOME</h1>
+                HOME
             </div>
         </>
     )

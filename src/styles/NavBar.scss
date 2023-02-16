@@ -1,4 +1,128 @@
-.navbar-wrapper{
-    position: fixed;
-    z-index: 9999999999;
+@import './Utils/Variables.scss';
+
+a{
+    text-decoration: none;
+    color: $secondary-color;
+}
+.navbar{
+    
+    &-wrapper{
+        position: fixed;
+        z-index: 99;
+        list-style: none;
+    }
+
+    &-toggle{
+        position: absolute;
+        z-index: 999999999;
+        width: 100vw;
+        top: 50px;
+        left: -50px;
+        display: flex;
+        justify-content: flex-end;
+        .circle{
+            top: 5%;
+            right: 3%;
+            border-radius: 50%;
+            border: 2px solid $secondary-color;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .line1{
+                position: absolute;
+                top: 45%;
+                right: 14.5px;
+                background-color: $secondary-color;
+                height: 1px;
+                width: 35px;
+            }
+            .line2{
+                position: absolute;
+                top: 55%;
+                right: 14.5px;
+                background-color: $secondary-color;
+                height: 1px;
+                width: 35px;
+            }
+            opacity : 1;
+            transition: opacity 0.5 ease-out;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+    &-first-transition{
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: $secondary-color;
+    }
+    &-main{
+        background-color: $primary-color;
+        color: $secondary-color;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .links-list{
+            line-height: 6em;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 50px;
+            & > li{
+                width: 100%;
+                border: 0;
+                list-style: none;
+                font-size: 6rem;
+                font-weight: bold;
+            }
+            
+            .home, .about, .projects{
+                overflow-y: hidden;
+                opacity: 1;
+                transition: opacity 0.4s ease-out;
+                &:hover{
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+}
+
+// Tablet
+@media (max-width: $tablet-size) {
+    .home, .about, .projects{
+        transition: none !important;
+        &:hover{
+            opacity: 1 !important;
+        }
+    }
+    .circle{
+        opacity : 1;
+        transition: none !important;
+        &:hover{
+            opacity: 1 !important;
+        }
+    }
+}
+
+// Mobile
+@media (max-width: $mobile-size) {
+    .home, .about, .projects{
+        transition: none;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    .circle{
+        opacity : 1;
+        transition: none !important;
+        &:hover{
+            opacity: 1 !important;
+        }
+    }
 }
