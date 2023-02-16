@@ -26,6 +26,7 @@ const Loading = ({images}) => {
                 <div className="loading-wrapper">
                     <div className="loading-container">
                         <motion.div 
+                            key="loading-images"
                             className="loading-images"
                             initial={{clipPath: "polygon(0 0, 0 0, 100% 0, 100% 0)", opacity: 1}}
                             animate={{clipPath: "polygon(0 0, 0 100%, 100% 100%, 100% 0)", opacity: 1}}
@@ -37,6 +38,7 @@ const Loading = ({images}) => {
                         </motion.div>
                         <div className="loading-text">
                             <motion.div 
+                            key="loading-text"
                             className="text-wrapper"
                             initial={{opacity: 0, y: "20%"}}
                             animate={{opacity: 1, y: "0%"}}

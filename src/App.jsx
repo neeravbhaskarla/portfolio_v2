@@ -6,17 +6,12 @@ import ScrollSmoother from "gsap-trial/ScrollSmoother";
 import Loading from './Components/Loading'
 import { motion, AnimatePresence } from 'framer-motion'
 import {useDispatch, useSelector} from 'react-redux'
+import { useLocation } from 'react-router-dom';
+
+import { MainWebsite } from './Components/MainWebsite';
 import { fetchProjects } from "./Redux/ProjectSlice";
 import { fetchSkills } from './Redux/SkillSlice'
 import {IMAGES} from './Data/DefaultData'
-
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom";
-import Home from './Components/Home';
 // import listOfPages from './Routes/Routes'
 
 import './styles/App.scss'
@@ -51,6 +46,7 @@ const App = () =>{
   // State Selector Events
   const skillLoading = useSelector((state)=>state.skills.loading)
   const projectsLoading = useSelector((state)=>state.projects.loading)
+  const [pagesLoading, setPagesLoading] = useState(true)
   
   // Checking if both API's are being fetched
   const [loading, setLoading] = useState(true)
@@ -65,29 +61,22 @@ const App = () =>{
   
     return () => clearInterval(checkLoading);
   }, [skillLoading, projectsLoading]);
-  
-  const PageLoading = () =>{
-      <AnimatePresence>
-        <motion.div 
-          key="loa"
-          initial={{y: "0%"}}  
-          animate={{y: "0%"}}  
-          exit={{y:"-100%", transition:{delay: 1 ,duration: 1,  ease:"easeOut"}}}>
-            <Loading images={IMAGES}/>
-        </motion.div>
-      </AnimatePresence>
-  }
+
+  const location = useLocation()
 
   return(
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <BrowserRouter>
-            <Suspense fallback={PageLoading}>
-              <Routes>
-                  <Route path="/home" component={<Home/>}/>
-              </Routes>
-            </Suspense>
-        </BrowserRouter>
+          <AnimatePresence>
+            {location.pathname === '/' && loading && <motion.div 
+                  key="load"
+                  initial={{y: "0%"}}  
+                  animate={{y: "0%"}}  
+                  exit={{y:"-100%", transition:{delay: 1 ,duration: 1,  ease:"easeOut"}}}>
+                    <Loading images={IMAGES}/>
+                </motion.div>}
+                <MainWebsite/>
+          </AnimatePresence>
       </div>
     </div>
   )
