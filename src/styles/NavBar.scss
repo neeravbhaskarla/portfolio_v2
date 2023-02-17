@@ -19,9 +19,6 @@ a{
             display: flex;
             justify-content: end;
             .circle{
-                background-color: $secondary-color;
-                mix-blend-mode: difference;
-                
                 margin-top: 30px;
                 margin-right: 30px;
                 border-radius: 50%;
@@ -40,25 +37,26 @@ a{
                     transition: scale 0.4s ease-out;
                     .line1{
                         transition: scale 0.3s ease-out;
-                        background-color: $primary-color;
-                        height: 3px;
+                        background-color: $secondary-color;
+                        mix-blend-mode: difference;
+                        height: 2px;
                         width: 25px;
                         transform: translateY(0px) rotate(0deg);
                         transition: transform 0.8s ease-out;
 
                     }
                     .line2{
-                        background-color: $primary-color;
-                        height: 3px;
+                        background-color: $secondary-color;
+                        mix-blend-mode: difference;
+                        height: 2px;
                         width: 25px;
                         transform: translateY(0px) rotate(0deg);
                         transition: transform 0.8s ease-out;
                     }
                 }
                 &:hover{
-                    scale: 0.9;
                     .lines{
-                        scale: 0.8;
+                        scale: 0.9;
                     }
                 }
                 opacity : 1;
