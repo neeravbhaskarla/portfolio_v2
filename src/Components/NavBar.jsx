@@ -26,8 +26,8 @@ const NavBar = () => {
                     <div className="toggle-wrapper">
                         <div className="circle" onClick={()=>setToggle(!toggle)}>
                             <div className="lines">
-                                <div className="line1"></div>
-                                <div className="line2"></div>
+                                <div className={toggle?"line1 open1":"line1"}></div>
+                                <div className={toggle?"line2 open2":"line2"}></div>
                             </div>
                         </div>
                     </div>

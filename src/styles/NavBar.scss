@@ -8,49 +8,61 @@ a{
     
     &-wrapper{
         position: fixed;
-        z-index: 99;
         list-style: none;
     }
 
     &-toggle{
         position: absolute;
-        z-index: 999999999;
         .toggle-wrapper{
             width: 100vw;
             display: flex;
             justify-content: end;
             .circle{
+                z-index: 999;
+                background-color: $secondary-color;
+                mix-blend-mode: difference;
+                
                 margin-top: 30px;
                 margin-right: 30px;
                 border-radius: 50%;
-                border: 2px solid $secondary-color;
                 height: 60px;
                 width: 60px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                transition: scale 0.5s ease-out;
                 .lines{
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
                     height: 10px;
+                    transition: scale 0.4s ease-out;
                     .line1{
-                        background-color: $secondary-color;
-                        height: 1px;
-                        width: 35px;
+                        transition: scale 0.3s ease-out;
+                        background-color: $primary-color;
+                        height: 3px;
+                        width: 25px;
+                        transform: translateY(0px) rotate(0deg);
+                        transition: transform 0.8s ease-out;
+
                     }
                     .line2{
-                        background-color: $secondary-color;
-                        height: 1px;
-                        width: 35px;
+                        background-color: $primary-color;
+                        height: 3px;
+                        width: 25px;
+                        transform: translateY(0px) rotate(0deg);
+                        transition: transform 0.8s ease-out;
+                    }
+                }
+                &:hover{
+                    scale: 0.9;
+                    .lines{
+                        scale: 0.8;
                     }
                 }
                 opacity : 1;
                 transition: opacity 0.5 ease-out;
-                &:hover{
-                    opacity: 0.5;
-                }
             }
         }
     }
@@ -62,7 +74,6 @@ a{
     }
     &-main{
         background-color: $primary-color;
-        color: $secondary-color;
         height: 100vh;
         width: 100vw;
         display: flex;
@@ -84,46 +95,70 @@ a{
             
             .home, .about, .projects{
                 overflow-y: hidden;
-                opacity: 1;
-                transition: opacity 0.4s ease-out;
+                -webkit-text-stroke: 0px;
+                color: $secondary-color;
                 &:hover{
-                    opacity: 0.4;
+                    color: $primary-color;
+                    -webkit-text-stroke: 1px $secondary-color;
                 }
             }
         }
     }
 }
 
+.open1{
+    transform: translateY(4px) rotate(45deg) !important;
+}
+.open2{
+    transform: translateY(-4px) rotate(-45deg) !important;
+}
+
 // Tablet
 @media (max-width: $tablet-size) {
+
     .home, .about, .projects{
-        transition: none !important;
         &:hover{
-            opacity: 1 !important;
+            color: $secondary-color !important;
+            -webkit-text-stroke: 0px !important;
         }
     }
     .circle{
-        opacity : 1;
         transition: none !important;
+        .lines{
+            transition: none !important;
+            scale: 1 !important;
+        }
         &:hover{
-            opacity: 1 !important;
+            scale: 1 !important;
         }
     }
 }
 
 // Mobile
 @media (max-width: $mobile-size) {
+    
     .home, .about, .projects{
-        transition: none;
         &:hover{
-            opacity: 1;
+            color: $secondary-color !important;
+            -webkit-text-stroke: 0px !important;
         }
     }
     .circle{
-        opacity : 1;
+        border: 0 !important;
         transition: none !important;
+        .lines{
+            transition: none !important;
+            scale: 1 !important;
+        }
         &:hover{
-            opacity: 1 !important;
+            scale: 1 !important;
+        }
+    }
+    .links-list{
+        line-height: 4em !important;
+        margin: 10px;
+        & > li{
+            font-size: 2rem !important;
         }
     }
 }
