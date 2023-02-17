@@ -57,7 +57,7 @@ const App = () =>{
         setLoading(false);
         clearInterval(checkLoading);
       }
-    }, 5000);
+    }, 4000);
   
     return () => clearInterval(checkLoading);
   }, [skillLoading, projectsLoading]);
