@@ -22,9 +22,9 @@ const NavBar = () => {
     return (
         <div className="navbar-wrapper">
             <AnimatePresence>
-                <motion.div key="toggle" className='navbar-toggle' onClick={()=>setToggle(!toggle)}>
+                <motion.div key="toggle" className='navbar-toggle'>
                     <div className="toggle-wrapper">
-                        <div className="circle">
+                        <div className="circle" onClick={()=>setToggle(!toggle)}>
                             <div className="lines">
                                 <div className="line1"></div>
                                 <div className="line2"></div>
