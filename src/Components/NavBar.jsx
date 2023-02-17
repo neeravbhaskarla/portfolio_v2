@@ -26,12 +26,11 @@ const NavBar = () => {
                     <div className="toggle-wrapper">
                         <div className="circle" onClick={()=>setToggle(!toggle)}>
                             <div className="lines">
-                                <div className={toggle?"line1 open1":"line1"}></div>
-                                <div className={toggle?"line2 open2":"line2"}></div>
+                                <div className="line1"></div>
+                                <div className="line2"></div>
                             </div>
                         </div>
                     </div>
-
                 </motion.div>
                 {
                     toggle && (
@@ -49,6 +48,16 @@ const NavBar = () => {
                                 animate={{y:"0%"}}
                                 transition={{delay: 0.7, duration: 0.5, ease: "easeInOut"}}
                                 exit={{y:"-100%", transition: {delay: 0.4, duration: 0.4, ease: "linear"}}}>
+                                <motion.div key="toggle" className='navbar-toggle-inside'>
+                                    <div className="toggle-wrapper-inside">
+                                        <div className="circle" onClick={()=>setToggle(!toggle)}>
+                                            <div className="lines">
+                                                <div className="line1"></div>
+                                                <div className="line2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
                                 <ul className='links-list'>
                                     <li>
                                         <Link to="/home" onClick={()=>{location.pathname==='/home' && setToggle(false)}}>

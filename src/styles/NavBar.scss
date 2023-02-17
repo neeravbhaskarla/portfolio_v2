@@ -13,12 +13,12 @@ a{
 
     &-toggle{
         position: absolute;
+        z-index: 0 !important;
         .toggle-wrapper{
             width: 100vw;
             display: flex;
             justify-content: end;
             .circle{
-                z-index: 999;
                 background-color: $secondary-color;
                 mix-blend-mode: difference;
                 
@@ -66,13 +66,67 @@ a{
             }
         }
     }
+    
+    &-toggle-inside{
+        position: absolute;
+        .toggle-wrapper-inside{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: end;
+            .circle{
+                background-color: $primary-color;
+                margin-top: 30px;
+                margin-right: 30px;
+                border-radius: 50%;
+                height: 60px;
+                width: 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transition: scale 0.5s ease-out;
+                .lines{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 10px;
+                    transition: scale 0.4s ease-out;
+                    .line1{
+                        transition: scale 0.3s ease-out;
+                        background-color: $secondary-color;
+                        height: 2px;
+                        width: 40px;
+                        transform: translateY(4px) rotate(45deg) !important;
+                    }
+                    .line2{
+                        background-color: $secondary-color;
+                        height: 2px;
+                        width: 40px;
+                        transform: translateY(-4px) rotate(-45deg) !important;
+                    }
+                }
+                &:hover{
+                    scale: 0.9;
+                    .lines{
+                        scale: 0.8;
+                    }
+                }
+                opacity : 1;
+                transition: opacity 0.5 ease-out;
+            }
+        }
+    }
+
     &-first-transition{
+        // z-index: 9999 !important;
         position: absolute;
         height: 100vh;
         width: 100vw;
         background-color: $secondary-color;
     }
     &-main{
+        z-index: 999999 !important;
         background-color: $primary-color;
         height: 100vh;
         width: 100vw;
@@ -104,13 +158,6 @@ a{
             }
         }
     }
-}
-
-.open1{
-    transform: translateY(4px) rotate(45deg) !important;
-}
-.open2{
-    transform: translateY(-4px) rotate(-45deg) !important;
 }
 
 // Tablet
