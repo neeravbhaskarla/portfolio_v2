@@ -13,7 +13,7 @@ a{
 
     &-toggle{
         position: absolute;
-        z-index: 0 !important;
+        z-index: 9999;
         .toggle-wrapper{
             width: 100vw;
             display: flex;
@@ -38,7 +38,7 @@ a{
                     .line1{
                         transition: scale 0.3s ease-out;
                         background-color: $secondary-color;
-                        mix-blend-mode: difference;
+                        mix-blend-mode: difference !important;
                         height: 2px;
                         width: 25px;
                         transform: translateY(0px) rotate(0deg);
@@ -67,6 +67,7 @@ a{
     
     &-toggle-inside{
         position: absolute;
+        z-index: 99999;
         .toggle-wrapper-inside{
             height: 100vh;
             width: 100vw;
@@ -117,14 +118,15 @@ a{
     }
 
     &-first-transition{
-        // z-index: 9999 !important;
         position: absolute;
+        z-index: 99999;
         height: 100vh;
         width: 100vw;
         background-color: $secondary-color;
     }
     &-main{
-        z-index: 999999 !important;
+        position: absolute;
+        z-index: 9999999;
         background-color: $primary-color;
         height: 100vh;
         width: 100vw;
@@ -143,6 +145,7 @@ a{
                 list-style: none;
                 font-size: 6rem;
                 font-weight: bold;
+                z-index: 99999;
             }
             
             .home, .about, .projects{
