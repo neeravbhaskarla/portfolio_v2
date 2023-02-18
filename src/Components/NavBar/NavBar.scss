@@ -1,4 +1,4 @@
-@import './Utils/Variables.scss';
+@import '../../styles/Utils/Variables.scss';
 
 a{
     text-decoration: none;
@@ -195,11 +195,14 @@ a{
         }
     }
     .circle{
-        border: 0 !important;
-        transition: none !important;
+        margin-right: 10px !important;
         .lines{
             transition: none !important;
             scale: 1 !important;
+            & > .line1, .line2{
+                height: 1.5px !important;
+                width: 20px !important;
+            }
         }
         &:hover{
             scale: 1 !important;

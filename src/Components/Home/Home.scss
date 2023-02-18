@@ -1,0 +1,218 @@
+@import '../../styles/Utils/Variables.scss';
+
+
+$left-padding: 50px;
+
+.ca-flex{
+    display: flex;
+    align-items: center;
+}
+
+.c-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-wrapper{
+    z-index: 0;
+    position: relative;
+    background-color: $primary-color;
+    color: $secondary-color;    
+    .home-main-page{
+        height: 105vh;
+        width: 100vw;
+        display: grid;
+        grid-template-rows: 0.5fr 2fr 1fr;
+        
+        .name-logo{
+            @extend .ca-flex;
+            padding-left: $left-padding;
+            span{
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+        }
+        
+        .main-role{
+            .role-wrapper{
+                @extend .ca-flex;
+                padding-left: $left-padding;
+                height: 100%;
+                max-width: 900px;
+                span{
+                    font-size: 6rem;
+                    font-weight: 600;
+                }
+            }
+        }
+        
+        .footer{
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            .box1{
+                display: grid;
+                grid-template-rows: 1.5fr 1fr;
+            
+                .box1-up{
+                    @extend .ca-flex;
+                    padding-left: $left-padding;
+                    &-content{
+                        max-width: 250px;
+                    }
+                }
+                .box1-down{
+                    @extend .ca-flex;
+                    padding-left: $left-padding;
+                    &-content{
+                        animation: upDown 1s infinite ease-out;
+                    }
+                }
+            }
+            
+            .box2{
+                display: flex;
+                align-items: start;
+                justify-content: end;
+                padding-right: $left-padding;
+                span{
+                    font-size: 6rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+// Tablet
+@media (max-width: $tablet-size) {
+    .name-logo{
+        span{
+            font-size: 1rem !important;
+        }
+    }
+    
+    .main-role{
+        .role-wrapper{
+            align-items: end !important;
+            max-width: 500px !important;
+        }
+        span{
+            font-size: 4rem !important;
+        }
+    }
+
+    .box1-up{
+        align-items: start !important;
+        margin-top: 10px;
+        &-content{
+            span{
+                font-size: 0.8rem !important;
+            }
+        }
+    }
+
+    .box1-down{
+        align-items: start !important;
+        &-content{
+            span{
+                svg{
+                    height: 30px !important; 
+                }
+            }
+        }
+    }
+    .box2{
+        span{
+            font-size: 4rem !important;
+        }
+    }
+}
+
+// Mobile
+@media (max-width: $mobile-size) {
+    .home-wrapper{
+        .home-main-page{
+            height: 100vh !important;
+            grid-template-rows: 0.35fr 1fr 1fr;
+        }
+    }
+
+    .name-logo{
+        padding-left: 30px !important;
+        margin-top: 20px;
+        span{
+            font-size: 0.6rem !important;
+        }
+    }
+    
+    .main-role{
+        .role-wrapper{
+            padding-left: 30px !important;
+            max-width: fit-content !important;
+        }
+        span{
+            font-size: 1.2rem !important;
+            &::after{
+                font-size: 1rem;
+                content: " &";
+            }
+        }
+    }
+
+    .footer{
+        grid-template-rows: 0.1fr 1fr !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    .box1{
+        grid-row: 2/2;
+    }
+
+    .box1-up{
+        padding-left: 0px !important;
+        align-items: start !important;
+        margin-top: 0px !important;
+        &-content{
+            padding-left: 30px !important;
+            span{
+                font-size: 0.5rem !important;
+            }
+        }
+    }
+
+    .box1-down{
+        margin-bottom: 20px !important;
+        align-items: end !important;
+        justify-content: start !important;
+        padding-left: 30px !important;
+        &-content{
+            span{
+                svg{
+                    height: 19px !important;
+                }
+            }
+        }
+    }
+    .box2{
+        grid-row: 1/2;
+        padding-left: 30px !important;
+        justify-content: start !important;
+        // padding-right: 30px !important;
+        span{
+            font-size: 1.2rem !important;
+        }
+    }
+}
+
+@keyframes upDown {
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}

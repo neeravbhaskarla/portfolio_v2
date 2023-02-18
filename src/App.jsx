@@ -3,7 +3,7 @@ import { gsap } from "gsap-trial";
 import ScrollTrigger from "gsap-trial/ScrollTrigger";
 import ScrollSmoother from "gsap-trial/ScrollSmoother";
 
-import Loading from './Components/Loading'
+import Loading from './Components/Loading/Loading'
 import { motion, AnimatePresence } from 'framer-motion'
 import {useDispatch, useSelector} from 'react-redux'
 import { useLocation } from 'react-router-dom';
@@ -12,11 +12,9 @@ import { MainWebsite } from './Components/MainWebsite';
 import { fetchProjects } from "./Redux/ProjectSlice";
 import { fetchSkills } from './Redux/SkillSlice'
 import {IMAGES} from './Data/DefaultData'
-// import listOfPages from './Routes/Routes'
 
 import './styles/App.scss'
-import './styles/Loading.scss'
-import NavBar from './Components/NavBar';
+import NavBar from './Components/NavBar/NavBar';
 
 const App = () =>{
   
@@ -47,7 +45,7 @@ const App = () =>{
   // State Selector Events
   const skillLoading = useSelector((state)=>state.skills.loading)
   const projectsLoading = useSelector((state)=>state.projects.loading)
-  const [pagesLoading, setPagesLoading] = useState(true)
+  const [pagesLoaded, setPagesLoaded] = useState(true)
   
   // Checking if both API's are being fetched
   const [loading, setLoading] = useState(true)
@@ -66,21 +64,34 @@ const App = () =>{
   const location = useLocation()
 
   return(
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-          <AnimatePresence>
-            {location.pathname === '/' && loading && <motion.div 
-                  key="load"
-                  initial={{y: "0%"}}  
-                  animate={{y: "0%"}}  
-                  exit={{y:"-100%", transition:{delay: 1 ,duration: 1,  ease:"easeOut"}}}>
-                    <Loading images={IMAGES}/>
-                </motion.div>}
-                <NavBar key="navbar"/>
-                <MainWebsite key="main-website"/>
-          </AnimatePresence>
+    <>
+      {!loading && 
+      <motion.div 
+        style={{position: "fixed", zIndex: 999}}
+        initial={{opacity: 0}}  
+        animate={{opacity: 1}}
+        transition={{delay: 1.2, duration: 0.8}}>
+          <NavBar key="navbar" className='navbar-head'/>
+      </motion.div>}
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <AnimatePresence>
+              {(location.pathname === '/' && loading) ? <motion.div 
+                    key="load"
+                    style={{position: "fixed", zIndex: 999}}
+                    initial={{y: "0%"}}  
+                    animate={{y: "0%"}}  
+                    exit={{y:"-100%", transition:{delay: 1 ,duration: 1,  ease:"easeOut"}}}>
+                      <Loading images={IMAGES}/>
+                  </motion.div>
+                  :
+                  <motion.div className='main-page'>
+                    <MainWebsite key="main-website"/>
+                  </motion.div>}
+            </AnimatePresence>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

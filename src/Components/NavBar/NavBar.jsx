@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {AnimatePresence, motion} from 'framer-motion'
-import '../styles/NavBar.scss'
 import { Link } from 'react-router-dom'
+import './NavBar.scss'
 
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)

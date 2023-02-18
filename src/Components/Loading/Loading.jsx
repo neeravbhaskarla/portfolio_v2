@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {motion, usePresence} from 'framer-motion'
-import '../styles/Loading.scss'
+import './Loading.scss'
 
 const Loading = ({images}) => {
     const [isPresent, safeToRemove] = usePresence();

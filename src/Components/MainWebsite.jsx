@@ -1,8 +1,8 @@
-import Home from './Home'
+import Home from './Home/Home'
 
 import { Routes, Route, Navigate} from "react-router-dom";
-import About from './About';
-import Projects from './Projects';
+import About from './About/About';
+import Projects from './Projects/Projects';
 
 
 export const MainWebsite = () =>{

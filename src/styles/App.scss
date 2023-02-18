@@ -8,3 +8,8 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 }
+
+.main-page{
+    position: relative;
+    z-index: 10;
+}
