@@ -20,7 +20,7 @@ $left-padding: 50px;
     background-color: $primary-color;
     color: $secondary-color;    
     .home-main-page{
-        height: 105vh;
+        height: 100vh;
         width: 100vw;
         display: grid;
         grid-template-rows: 0.5fr 2fr 1fr;
@@ -72,7 +72,7 @@ $left-padding: 50px;
             
             .box2{
                 display: flex;
-                align-items: start;
+                align-items: center;
                 justify-content: end;
                 padding-right: $left-padding;
                 span{
@@ -84,11 +84,18 @@ $left-padding: 50px;
     }
 }
 
+.skills-top{
+    height: 10vh;
+    width: 10vw;
+}
 .skills{
+
     &-wrapper{
         height: 100vh;
         width: 100vw;
-        @extend .c-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &-area{
@@ -104,17 +111,6 @@ $left-padding: 50px;
             display: flex;
             justify-content: center;
             align-items: center
-        }
-        .skill-type{
-            @extend .c-flex;
-            .skill-wrapper{
-                display: flex;
-                justify-content: space-between;
-                width: 95%;
-                align-items: center;
-                font-size: 0.7rem;
-                font-weight: 300;
-            }
         }
         .frameworks{
             height: 9vh;
@@ -134,17 +130,57 @@ $left-padding: 50px;
         }
     }
 }
-
-.marquee-container {
-    overflow: hidden;
+.skill-type{
+    position: relative;
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .skill-wrapper{
+        height: 10vh !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 96%;
+        font-size: 0.7rem;
+        font-weight: 300;
+    }
+}
+.languages, .frameworks, .backend{
+    .marquee-container {
+        overflow: hidden;
+        width: 100vw;
+    }
+    
+    .marquee {
+        animation: marquee 10s linear infinite;
+        width: 200vw;
+        display: flex;
+        justify-content: space-around !important;
+    }
 }
 
-.marquee {
-    animation: marquee 10s linear infinite;
-    width: 200vw;
-    display: flex;
-    justify-content: space-around !important;
+.languages{
+    .marquee{
+        animation: marquee 10s linear infinite;
+    }
+}
+.frameworks{
+    .marquee{
+        animation: marquee 8s linear infinite;
+    }
+}
+.backend{
+    .marquee{
+        animation: marquee 6s linear infinite;
+    }
+}
+
+// Other Page
+.otherpage-wrapper{
+    background-color: $primary-color;
+    color: $secondary-color;
+    height: 60vh;
 }
 
 @keyframes marquee {
@@ -156,7 +192,7 @@ $left-padding: 50px;
 @media (max-width: $tablet-size) {
     .home-wrapper{
         .home-main-page{
-            height: 102vh !important;
+            height: 100vh !important;
             grid-template-rows: 0.4fr 1fr 1fr;
         }
     }
@@ -177,7 +213,7 @@ $left-padding: 50px;
     }
 
     .box1-up{
-        align-items: end !important;
+        align-items: center !important;
         margin-top: 10px;
         &-content{
             span{
@@ -187,7 +223,7 @@ $left-padding: 50px;
     }
 
     .box1-down{
-        align-items: end !important;
+        align-items: start !important;
         &-content{
             span{
                 svg{
@@ -305,5 +341,17 @@ $left-padding: 50px;
     .backend{
         height: 4vh !important;
         font-size: $skills-font-mobile !important;
+    }
+}
+
+@keyframes upDown {
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateY(0%);
     }
 }

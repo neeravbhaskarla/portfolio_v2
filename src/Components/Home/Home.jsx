@@ -1,6 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import { useSelector } from 'react-redux'
+import FooterField from '../FooterField/FooterField'
 import {skills} from '../../Data/SkillsData'
 import "./Home.scss"
 
@@ -48,7 +49,11 @@ const Home = () =>{
                         </div>
                     </motion.div>
                 </motion.div>
+
+
                 <div className="skills-wrapper">
+                    <div className="skills-top">
+                    </div>
                     <div className="skills-area">
                         <div className="languages">
                             <div className="marquee-container">
@@ -64,16 +69,6 @@ const Home = () =>{
                                             ))
                                         }
                                 </div>
-                            </div>
-                        </div>
-                        <div className="skill-type">
-                            <div className="skill-wrapper">
-                                <span className="skill-heading">
-                                    Skills
-                                </span>
-                                <span className="skill-types">
-                                    Language / Development tools / Design tools
-                                </span>
                             </div>
                         </div>
                         <div className="frameworks">
@@ -109,7 +104,18 @@ const Home = () =>{
                             </div>
                         </div>
                     </div>
+                    <div className="skill-type">
+                        <div className="skill-wrapper">
+                            <span className="skill-heading">
+                                Skills
+                            </span>
+                            <span className="skill-types">
+                                Language / Development tools / Design tools
+                            </span>
+                        </div>
+                    </div>
                 </div>
+                <FooterField name="About Me" path="/about" requiredNav/>
             </div>
         </>
     )
