@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {AnimatePresence, motion} from 'framer-motion'
 import '../styles/NavBar.scss'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)
@@ -18,7 +18,7 @@ const NavBar = () => {
         window.addEventListener("resize", handleResize)
         return ()=> window.removeEventListener("resize", handleResize)
     }, [])
-    const location = useLocation();
+
     return (
         <div className="navbar-wrapper">
             <AnimatePresence>
@@ -60,7 +60,7 @@ const NavBar = () => {
                                 </motion.div>
                                 <ul className='links-list'>
                                     <li>
-                                        <Link to="/home" onClick={()=>{location.pathname==='/home' && setToggle(false)}}>
+                                        <Link to="/home" onClick={()=>setToggle(false)}>
                                             <div className="home">
                                                 <motion.div
                                                     initial={{y: "100%"}}
@@ -73,7 +73,7 @@ const NavBar = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/about" onClick={()=>{location.pathname=='/about' && setToggle(false)}}>
+                                        <Link to="/about" onClick={()=>setToggle(false)}>
                                             <div className="about">
                                                 <motion.div
                                                     initial={{y: "100%"}}
@@ -86,7 +86,7 @@ const NavBar = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/projects" onClick={()=>{location.pathname=='/projects' && setToggle(false)}}>
+                                        <Link to="/projects" onClick={()=>setToggle(false)}>
                                             <div className="projects">
                                                 <motion.div
                                                     initial={{y: "100%"}}

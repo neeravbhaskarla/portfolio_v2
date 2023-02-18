@@ -9,6 +9,7 @@ a{
     &-wrapper{
         position: fixed;
         list-style: none;
+        z-index: 99 !important;
     }
 
     &-toggle{
@@ -39,6 +40,7 @@ a{
                         transition: scale 0.3s ease-out;
                         background-color: $secondary-color;
                         mix-blend-mode: difference !important;
+                        z-index: 9999;
                         height: 2px;
                         width: 25px;
                         transform: translateY(0px) rotate(0deg);
@@ -48,6 +50,7 @@ a{
                     .line2{
                         background-color: $secondary-color;
                         mix-blend-mode: difference;
+                        z-index: 9999;
                         height: 2px;
                         width: 25px;
                         transform: translateY(0px) rotate(0deg);

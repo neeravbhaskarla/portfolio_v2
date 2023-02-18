@@ -16,6 +16,7 @@ import {IMAGES} from './Data/DefaultData'
 
 import './styles/App.scss'
 import './styles/Loading.scss'
+import NavBar from './Components/NavBar';
 
 const App = () =>{
   
@@ -75,7 +76,8 @@ const App = () =>{
                   exit={{y:"-100%", transition:{delay: 1 ,duration: 1,  ease:"easeOut"}}}>
                     <Loading images={IMAGES}/>
                 </motion.div>}
-                <MainWebsite/>
+                <NavBar key="navbar"/>
+                <MainWebsite key="main-website"/>
           </AnimatePresence>
       </div>
     </div>
