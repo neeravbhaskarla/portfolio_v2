@@ -70,8 +70,8 @@ const App = () =>{
         style={{position: "fixed", zIndex: 999}}
         initial={{opacity: 0}}  
         animate={{opacity: 1}}
-        transition={{delay: 1.2, duration: 0.8}}>
-          <NavBar key="navbar" className='navbar-head'/>
+        transition={{delay: 0.4 ,duration: 0.8}}>
+          <NavBar key="navbar"/>
       </motion.div>}
       <div id="smooth-wrapper">
         <div id="smooth-content">

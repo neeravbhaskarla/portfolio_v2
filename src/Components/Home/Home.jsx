@@ -1,9 +1,14 @@
 import React from 'react'
 import {motion} from 'framer-motion'
+import { useSelector } from 'react-redux'
+import {skills} from '../../Data/SkillsData'
 import "./Home.scss"
 
 const Home = () =>{
-    
+    // const skills = useSelector(state=>state.skills);
+    const languages = skills.languages;
+    const frameworks = skills.frameworks;
+    const backend = skills.backend
     return (
         <>
             <div className="home-wrapper">
@@ -43,6 +48,68 @@ const Home = () =>{
                         </div>
                     </motion.div>
                 </motion.div>
+                <div className="skills-wrapper">
+                    <div className="skills-area">
+                        <div className="languages">
+                            <div className="marquee-container">
+                                <div className="marquee">
+                                        {
+                                            languages.map((language)=>(    
+                                                <span key={language}>{language}</span>
+                                            ))
+                                        }
+                                        {
+                                            languages.map((language)=>(    
+                                                <span key={language}>{language}</span>
+                                            ))
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                        <div className="skill-type">
+                            <div className="skill-wrapper">
+                                <span className="skill-heading">
+                                    Skills
+                                </span>
+                                <span className="skill-types">
+                                    Language / Development tools / Design tools
+                                </span>
+                            </div>
+                        </div>
+                        <div className="frameworks">
+                            <div className="marquee-container">
+                                <div className="marquee">
+                                        {
+                                            frameworks.map((framework)=>(    
+                                                <span key={framework}>{framework}</span>
+                                            ))
+                                        }
+                                        {
+                                            frameworks.map((framework)=>(    
+                                                <span key={framework}>{framework}</span>
+                                            ))
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                        <div className="backend">
+                            <div className="marquee-container">
+                                <div className="marquee">
+                                        {
+                                            backend.map((backend)=>(    
+                                                <span key={backend}>{backend}</span>
+                                            ))
+                                        }
+                                        {
+                                            backend.map((backend)=>(    
+                                                <span key={backend}>{backend}</span>
+                                            ))
+                                        }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )
