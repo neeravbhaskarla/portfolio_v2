@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import {motion} from 'framer-motion'
 import { useSelector } from 'react-redux'
 
@@ -9,6 +9,11 @@ function Projects() {
   // const projects = useSelector(state => state.projects);
   const [index, setIndex] = useState(0);
   const [triggerEffect, setTriggerEffect] = useState(true);
+  
+  const imageRef = useRef(null);
+  const descRef = useRef(null);
+  const nameRef = useRef(null);
+
   useEffect(()=>{
     let timeout = setTimeout(()=>{
       setTriggerEffect(false)
@@ -18,12 +23,32 @@ function Projects() {
   
   const incrementIndex = () =>{
     if(index < projects.length-1){
-      setIndex(index+1)
+      imageRef.current.style.transform = "translateX(-100%)"
+      nameRef.current.style.opacity = 0
+      descRef.current.style.opacity = 0
+      
+      const transistionTimeout = setTimeout(()=>{
+        setIndex(index+1)
+        imageRef.current.style.transform = "translateX(0%)"
+        nameRef.current.style.opacity = 1
+        descRef.current.style.opacity = 1
+        clearTimeout(transistionTimeout)
+      }, 800)
     }
   }
   const decrementIndex = () =>{
     if(index > 0){
-      setIndex(index-1)
+      imageRef.current.style.transform = "translateX(-100%)"
+      nameRef.current.style.opacity = 0
+      descRef.current.style.opacity = 0
+      
+      const transistionTimeout = setTimeout(()=>{
+        setIndex(index-1)
+        imageRef.current.style.transform = "translateX(0%)"
+        nameRef.current.style.opacity = 1
+        descRef.current.style.opacity = 1
+        clearTimeout(transistionTimeout)
+      }, 800)
     }
   }
   return (
@@ -38,17 +63,17 @@ function Projects() {
               </div>
               <div className="project-main">
                 <div className="project-main-left">
-                  <img src={projects[index].imageURL} alt=""/>
+                  <img src={projects[index].imageURL} alt="" ref={imageRef}/>
                 </div>
                 <div className="project-main-right">
                   <div className="content">
-                    <span>{projects[index].description}</span>
+                    <span ref={descRef}>{projects[index].description}</span>
                   </div>
                 </div>
               </div>
               <div className="project-footer">
                 <div className="project-footer-left">
-                  <span>{projects[index].name}</span>
+                  <span ref={nameRef}>{projects[index].name}</span>
                 </div>
                 <div className="project-footer-right">
                   <button className="project-footer-right-left-arrow" 
