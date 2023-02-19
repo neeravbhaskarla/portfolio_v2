@@ -5,19 +5,19 @@ import './NavBar.scss'
 
 const NavBar = () => {
     const [toggle, setToggle] = useState(false)
-    const [mobile, setMobile] = useState(false);
-    const handleResize = () =>{
-        if(window.innerWidth < 960){
-            setMobile(true)
-        }
-        else{
-            setMobile(false)
-        }
-    }
-    useEffect(()=>{
-        window.addEventListener("resize", handleResize)
-        return ()=> window.removeEventListener("resize", handleResize)
-    }, [])
+    // const [mobile, setMobile] = useState(false);
+    // const handleResize = () =>{
+    //     if(window.innerWidth < 960){
+    //         setMobile(true)
+    //     }
+    //     else{
+    //         setMobile(false)
+    //     }
+    // }
+    // useEffect(()=>{
+    //     window.addEventListener("resize", handleResize)
+    //     return ()=> window.removeEventListener("resize", handleResize)
+    // }, [])
 
     return (
         <div className="navbar-wrapper">

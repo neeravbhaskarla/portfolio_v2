@@ -43,18 +43,14 @@ a{
                         z-index: 9999;
                         height: 2px;
                         width: 25px;
-                        transform: translateY(0px) rotate(0deg);
-                        transition: transform 0.8s ease-out;
 
                     }
                     .line2{
                         background-color: $secondary-color;
-                        mix-blend-mode: difference;
+                        mix-blend-mode: difference !important;
                         z-index: 9999;
                         height: 2px;
                         width: 25px;
-                        transform: translateY(0px) rotate(0deg);
-                        transition: transform 0.8s ease-out;
                     }
                 }
                 &:hover{
