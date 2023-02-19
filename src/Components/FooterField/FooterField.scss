@@ -58,9 +58,16 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                font-size: 2rem;
+                font-size: 1.6rem;
                 font-weight: 200;
                 width: 80vw;
+                .linked-in, .github, .email{
+                    border-bottom: 1px solid $primary-color; 
+                    transition: border 0.4s ease;
+                    &:hover{
+                        border-bottom: 1px solid $secondary-color; 
+                    }
+                }
             }
         }
         .version{

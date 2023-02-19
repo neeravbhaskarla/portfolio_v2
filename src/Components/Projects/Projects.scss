@@ -1,5 +1,208 @@
 @import '../../styles/Utils/Variables.scss';
 
+.addBorder{
+    border: 1px solid $secondary-color;
+}
+.c-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .projects-wrapper{
+    background-color: $primary-color;
+}
+.projects-main-page{
     position: relative;
+    background-color: $primary-color;
+    color: $secondary-color;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    .project-header{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        height: 15vh;
+        margin-left: 30px;
+        span{
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+        }
+    }
+
+    .project-main{
+        height: 70vh;
+        // @extend .addBorder;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        &-left{
+            // @extend .addBorder;
+            height: 70vh;
+            width: 100%;
+            border-top: 1px solid $secondary-color;;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &-right{
+            @extend .addBorder;
+            border-bottom: 0;
+            display: flex;
+            font-weight: 300;
+            padding: 40px 30px 0 30px;
+            .content{
+                display: flex;
+                justify-content: start;
+                span{
+                    font-size: 0.8rem;
+                    letter-spacing: 0.01em;
+                }
+            }
+        }
+    }
+    
+    .project-footer{
+        height: 15vh;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        &-left{
+            @extend .addBorder;
+            border-right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: 40px;
+            span{
+                letter-spacing: 0.2em;
+                font-size: 2rem;
+                font-weight: 600;
+            }
+        }
+        &-right{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            &-left-arrow{
+                @extend .addBorder;
+                border-right: 0;
+                @extend .c-flex;
+                justify-content: center;
+                background-color: $primary-color;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+                &:hover{
+                    opacity: 0.6;
+                }
+            }
+
+            &-right-arrow{
+                @extend .addBorder;
+                @extend .c-flex;
+                justify-content: center;
+                background-color: $primary-color;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+                &:hover{
+                    opacity: 0.6;
+                }
+            }
+            // @extend .addBorder;
+        }
+    }
+}
+
+
+// Tablet
+@media (max-width: $tablet-size) {
+    .project-header{
+        height: 15vh !important;
+    }
+    .project-main{
+        height: 70vh !important;
+        &-right{
+            padding: 30px 20px 0 20px !important;
+            .content{
+                span{
+                    font-size: 0.7rem !important;
+                }
+            }
+        }
+    }
+    .project-footer{
+        height: 15vh !important;
+        &-left{
+            span{
+                font-size: 1.5rem !important;
+            }
+        }
+        &-right{
+            &-left-arrow{
+                svg{
+                    width: 40px;
+                }
+            }
+            &-right-arrow{
+                svg{
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+// Mobile
+@media (max-width: $mobile-size) {
+    .project-header{
+        height: 20vh !important;
+        align-items: start !important;
+        margin-top: 45px;
+        span{
+            font-size: 0.8rem !important;
+        }
+    }
+    .project-main{
+        grid-template-rows: 1fr 1fr !important;
+        grid-template-columns: 1fr !important;
+        height: 40vh !important;
+        &-left{
+            height: 30vh !important;
+        }
+        &-right{
+            padding: 20px 10px 0 10px !important;
+            .content{
+                span{
+                    font-size: 0.3rem !important;
+                }
+            }
+        }
+    }
+    .project-footer{
+        height: 10vh !important;
+        grid-template-rows: 1fr 1fr !important;
+        grid-template-columns: 1fr !important;
+        &-left{
+            border-bottom: 0 !important;
+            border-right: 1px solid $secondary-color !important;
+            padding-left: 10px !important;
+            span{
+                font-size: 1rem !important;
+            }
+        }
+        &-right{
+            &-left-arrow{
+                svg{
+                    width: 40px;
+                }
+            }
+            &-right-arrow{
+                svg{
+                    width: 40px;
+                }
+            }
+        }
+    }
 }
