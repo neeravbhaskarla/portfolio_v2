@@ -13,21 +13,25 @@ function Projects() {
   const scrollContainer = useRef();
   const data = {
       ease: 0.05,
+      // ease: 1,
       current: 0,
       previous: 0,
       rounded: 0
   };
-
   useEffect(() => {
-      requestAnimationFrame(() => skewScrolling());
+      if(size.width>450)
+          requestAnimationFrame(() => skewScrolling());
+      else{
+          app.current.style.position = "relative"
+      }
   }, []);
 
   useEffect(() => {
       setBodyHeight();
   }, [size.height]);
-
   const setBodyHeight = () => {
-      document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
+      if(size.width>450)
+          document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
   };
 
   const skewScrolling = () => {
@@ -39,10 +43,12 @@ function Projects() {
       const acceleration = difference / size.width;
       // const velocity = +acceleration;
       // const skew = velocity * 7.5;
-      scrollContainer.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-
-      requestAnimationFrame(() => skewScrolling());
+      if(size.width>450){
+          scrollContainer.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
+          requestAnimationFrame(() => skewScrolling());
+      }
   };
+
 
   // const projects = useSelector(state => state.projects);
   const [index, setIndex] = useState(0);
