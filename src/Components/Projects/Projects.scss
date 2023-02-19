@@ -203,10 +203,18 @@
                 svg{
                     width: 40px;
                 }
+                transition: none !important;
+                &:hover{
+                    opacity: 1 !important;
+                }
             }
             &-right-arrow{
                 svg{
                     width: 40px;
+                }
+                transition: none !important;
+                &:hover{
+                    opacity: 1 !important;
                 }
             }
         }
