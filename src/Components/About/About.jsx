@@ -10,7 +10,7 @@ function About() {
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{delay: 1.8, duration: 1, ease: "linear"}}>
-                      <h1>ABOUT</h1>
+                      ABOUT
           </motion.div>
       </div>
     </>

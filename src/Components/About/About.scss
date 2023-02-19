@@ -2,4 +2,10 @@
 
 .about-wrapper{
     position: relative;
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+.about-main-page{
+    height: 100vh;
+    width: 100vw;
 }
