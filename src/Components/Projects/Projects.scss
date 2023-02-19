@@ -25,8 +25,8 @@
         justify-content: start;
         align-items: center;
         height: 15vh;
-        margin-left: 30px;
         span{
+            margin-left: 30px;
             font-size: 1rem;
             font-weight: 500;
             letter-spacing: 0.4em;
@@ -163,18 +163,23 @@
 
 // Mobile
 @media (max-width: $mobile-size) {
+    .projects-main-page{
+        grid-template-rows: 0.5fr 1fr 1fr;
+    }
     .project-header{
-        height: 20vh !important;
-        align-items: start !important;
-        margin-top: 45px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        height: 15vh;
         span{
+            margin-left: 20px !important;
             font-size: 0.8rem !important;
         }
     }
     .project-main{
         grid-template-rows: 1fr 1fr !important;
         grid-template-columns: 1fr !important;
-        height: 40vh !important;
+        height: 50vh !important;
         &-left{
             height: 30vh !important;
         }
@@ -183,6 +188,7 @@
             .content{
                 span{
                     font-size: 0.3rem !important;
+                    letter-spacing: 0.1em !important;
                 }
             }
         }
@@ -192,17 +198,19 @@
         grid-template-rows: 1fr 1fr !important;
         grid-template-columns: 1fr !important;
         &-left{
+            height: 6vh;
             border-bottom: 0 !important;
             border-right: 1px solid $secondary-color !important;
             padding-left: 10px !important;
             span{
                 font-size: 1rem !important;
+                font-weight: 600 !important;
             }
         }
         &-right{
             &-left-arrow{
                 svg{
-                    width: 40px;
+                    width: 30px;
                 }
                 transition: none !important;
                 &:hover{
@@ -211,7 +219,7 @@
             }
             &-right-arrow{
                 svg{
-                    width: 40px;
+                    width: 30px;
                 }
                 transition: none !important;
                 &:hover{
