@@ -1,0 +1,16 @@
+.nav-circle svg{
+    animation: anticlockwise 5s linear infinite;
+    height: 80px;
+    width: 80px;
+
+}
+  
+@keyframes anticlockwise{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(-360deg);
+    }
+}

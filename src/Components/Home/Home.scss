@@ -65,7 +65,7 @@ $left-padding: 50px;
                     @extend .ca-flex;
                     padding-left: $left-padding;
                     &-content{
-                        animation: upDown 1s infinite ease-out;
+                        animation: upDown 1s linear infinite;
                     }
                 }
             }

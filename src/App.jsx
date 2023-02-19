@@ -1,7 +1,7 @@
 import React, {useEffect, useLayoutEffect, useRef, useState, lazy, Suspense} from 'react'
 import { gsap } from "gsap-trial";
-import ScrollTrigger from "gsap-trial/ScrollTrigger";
-import ScrollSmoother from "gsap-trial/ScrollSmoother";
+// import ScrollTrigger from "gsap-trial/ScrollTrigger";
+// import ScrollSmoother from "gsap-trial/ScrollSmoother";
 
 import Loading from './Components/Loading/Loading'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -18,20 +18,20 @@ import NavBar from './Components/NavBar/NavBar';
 
 const App = () =>{
   
-  // For Smooth Scrolling
-  const el = useRef();
-  const q = gsap.utils.selector(el);
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  // // For Smooth Scrolling
+  // const el = useRef();
+  // const q = gsap.utils.selector(el);
+  // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  useLayoutEffect(() => {
-    let smoother = ScrollSmoother.create({
-      smooth: 1,
-      effects: true 
-    });
-    return () => {
-      smoother.kill();
-    };
-  }, []);
+  // useLayoutEffect(() => {
+  //   let smoother = ScrollSmoother.create({
+  //     smooth: 1,
+  //     effects: true 
+  //   });
+  //   return () => {
+  //     smoother.kill();
+  //   };
+  // }, []);
 
 
   // Redux Dispatch Events
