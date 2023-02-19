@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useRef, useState, lazy, Suspense} from 'react'
+import React, {useEffect, useState, lazy, Suspense} from 'react'
 // import { gsap } from "gsap-trial";
 // import ScrollTrigger from "gsap-trial/ScrollTrigger";
 // import ScrollSmoother from "gsap-trial/ScrollSmoother";
@@ -18,6 +18,7 @@ import NavBar from './Components/NavBar/NavBar';
 
 const App = () =>{
   
+
   // // For Smooth Scrolling
   // const el = useRef();
   // const q = gsap.utils.selector(el);
@@ -73,8 +74,9 @@ const App = () =>{
         transition={{delay: 0.4 ,duration: 0.8}}>
           <NavBar key="navbar"/>
       </motion.div>}
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      
+      <div>
+        <div>
             <AnimatePresence>
               {(location.pathname === '/' && loading) ? <motion.div 
                     key="load"
