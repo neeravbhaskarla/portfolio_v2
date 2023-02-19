@@ -23,7 +23,7 @@ function Projects() {
   
   const incrementIndex = () =>{
     if(index < projects.length-1){
-      imageRef.current.style.transform = "translateX(-100%)"
+      imageRef.current.style.transform = "translateX(-105%)"
       nameRef.current.style.opacity = 0
       descRef.current.style.opacity = 0
       
@@ -38,7 +38,7 @@ function Projects() {
   }
   const decrementIndex = () =>{
     if(index > 0){
-      imageRef.current.style.transform = "translateX(-100%)"
+      imageRef.current.style.transform = "translateX(-105%)"
       nameRef.current.style.opacity = 0
       descRef.current.style.opacity = 0
       
