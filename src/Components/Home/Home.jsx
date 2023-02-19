@@ -22,9 +22,14 @@ const Home = () =>{
     };
     useEffect(() => {
         if(size.width>450)
-            requestAnimationFrame(() => skewScrolling());
+            requestAnimationFrame(() => smoothScrolling());
         else{
             app.current.style.position = "relative"
+        }
+
+        //Resetting the height to 0
+        return ()=>{
+            document.body.style.height = 0
         }
     }, []);
 
@@ -36,18 +41,19 @@ const Home = () =>{
             document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
     };
 
-    const skewScrolling = () => {
+    const smoothScrolling = () => {
         data.current = window.scrollY;
         data.previous += (data.current - data.previous) * data.ease;
         data.rounded = Math.round(data.previous * 100) / 100;
 
-        const difference = data.current - data.rounded;
-        const acceleration = difference / size.width;
+        // const difference = data.current - data.rounded;
+        // const acceleration = difference / size.width;
         // const velocity = +acceleration;
         // const skew = velocity * 7.5;
+
         if(size.width>450){
             scrollContainer.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-            requestAnimationFrame(() => skewScrolling());
+            requestAnimationFrame(() => smoothScrolling());
         }
     };
 

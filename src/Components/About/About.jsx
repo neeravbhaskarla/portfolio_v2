@@ -21,10 +21,15 @@ function About() {
   };
   useEffect(() => {
       if(size.width>450)
-          requestAnimationFrame(() => skewScrolling());
+          requestAnimationFrame(() => smoothScrolling());
       else{
           app.current.style.position = "relative"
       }
+      
+      return ()=>{
+        document.body.style.height = 0
+      }
+
   }, []);
 
   useEffect(() => {
@@ -35,18 +40,19 @@ function About() {
           document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
   };
 
-  const skewScrolling = () => {
+  const smoothScrolling = () => {
       data.current = window.scrollY;
       data.previous += (data.current - data.previous) * data.ease;
       data.rounded = Math.round(data.previous * 100) / 100;
 
-      const difference = data.current - data.rounded;
-      const acceleration = difference / size.width;
+      // const difference = data.current - data.rounded;
+      // const acceleration = difference / size.width;
       // const velocity = +acceleration;
       // const skew = velocity * 7.5;
+
       if(size.width>450){
           scrollContainer.current.style.transform = `translate3d(0, -${data.rounded}px, 0)`;
-          requestAnimationFrame(() => skewScrolling());
+          requestAnimationFrame(() => smoothScrolling());
       }
   };
 
@@ -94,7 +100,7 @@ function About() {
                 <div className="wrapper-bottom"></div>
               </div>    
             </div>
-            
+
             <FooterField path="/projects" name="Projects" requiredNav/>
         </div>
       </div>
