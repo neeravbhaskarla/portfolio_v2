@@ -1,5 +1,10 @@
 @import '../../styles/Utils/Variables.scss';
 
+.c-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .about-wrapper{
     position: relative;
     background-color: $primary-color;
@@ -8,4 +13,142 @@
 .about-main-page{
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .about-header{
+        height: 20vh;
+    }
+    .about-landing{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 10vh;
+        &-title{
+            @extend .c-flex;
+            span{
+                font-size: 0.6rem;
+                font-weight: 200;
+            }
+            margin-bottom: 10px;
+        }
+        &-quote{
+            @extend .c-flex;
+            width: 380px;
+            span{
+                text-align: center;
+                font-size: 0.9rem;
+                font-weight: 300;
+            }
+        }
+    }
+    .footer-div{
+        height: 20vh;
+    }
+}
+
+.about-description{
+    height: 100vh;
+    width: 100vw;
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        .wrapper-top, .wrapper-bottom{
+            height: 40vh;
+        }
+        .content{
+            &-wrapper{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+                .heading{
+                    height: 100%;
+                    width: 50%;
+                    @extend .c-flex;
+                    align-items: start;
+                    span{
+                        font-size: 2rem;
+                        font-weight: 200;
+                    }
+                }
+                .description{
+                    width: 50%;
+                    display: flex;
+                    align-items: start;
+                    justify-content: start;
+                    height: 100%;
+                    &-wrapper{
+                        width: 80%;
+                        span{
+                            font-size: 0.8rem;
+                            font-weight: 200;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Tablet
+@media (max-width: $tablet-size) {
+
+}
+
+//Mobile
+@media (max-width: $mobile-size) {
+    .about-landing-title{
+        span{
+            font-size: 0.1rem !important;
+        }
+    }
+    .about-landing-quote{
+        width: 290px !important;
+        span{
+            font-size: 0.7rem !important;
+        }
+    }
+
+    .about-description{
+        &-wrapper{
+            .wrapper-top, .wrapper-bottom{
+                height: 5vh !important;
+            }
+            .content{
+                &-wrapper{
+                    display: flex;
+                    flex-direction: column !important;
+                    align-items: start !important;
+                    padding-left: 30px;
+                    .heading{
+                        width: 100%;
+                        display: flex;
+                        justify-content: start;
+                        span{
+                            font-size: 1.8rem;
+                        }
+                    }
+                    .description{
+                        padding-top: 20px;
+                        width: 100%;
+                        display: flex;
+                        align-items: start;
+                        justify-content: start;
+                        height: 100%;
+                        &-wrapper{
+                            width: 90%;
+                            span{
+                                font-size: 0.6rem;
+                                font-weight: 200;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

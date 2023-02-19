@@ -4,6 +4,7 @@ import {motion} from 'framer-motion'
 import HeadingCircle from './HeadingCircle'
 import './About.scss'
 import useWindowSize from '../../Hooks/useWindowSize'
+import FooterField from '../FooterField/FooterField'
 
 function About() {
 
@@ -62,13 +63,39 @@ function About() {
                       </div>
                       <div className="about-landing">
                         <div className="about-landing-title">
-                          <span>ABOUT</span>  
+                          <span>LIVING BY</span>  
                         </div>
                         <div className="about-landing-quote">
-                          <span><q> Crafting digital solutions with code: The art and science of a software developer</q></span>
+                          <span><q>Crafting digital solutions with code is the art and science of a software developer.</q></span>
                         </div>
-                      </div>
+                      </div> 
+                      <div className="footer-div"></div>
             </motion.div>
+            <div className="about-description">
+              <div className="about-description-wrapper">
+                <div className="wrapper-top"></div>
+                <div className="content">
+                  <div className="content-wrapper">
+                    <div className="heading">
+                      <span>ABOUT</span>
+                    </div>
+                    <div className="description">
+                      <div className="description-wrapper">
+                        <span>My name is Neerav, a passionate self-taught web developer from India. I specialize in creating innovative and engaging websites that deliver exceptional user experiences.
+                              <br/><br/>
+                              I am proficient in Data Structures & Algorithms, Object-Oriented Programming, Design Patterns and Full Stack Web application development, and have a solid understanding of these areas.
+                              <br/><br/>
+                              Experience with working on various programming languages such as Java, Python and various Frontend & Backend Frameworks.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="wrapper-bottom"></div>
+              </div>    
+            </div>
+            
+            <FooterField path="/projects" name="Projects" requiredNav/>
         </div>
       </div>
     </div>

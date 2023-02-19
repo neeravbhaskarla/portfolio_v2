@@ -1,8 +1,11 @@
-.nav-circle svg{
-    animation: anticlockwise 5s linear infinite;
-    height: 80px;
-    width: 80px;
+.nav-circle{
+    padding: 20px;
+    svg{
+        animation: anticlockwise 15s linear infinite;
+        height: 90px;
+        width: 90px;
 
+    } 
 }
   
 @keyframes anticlockwise{
