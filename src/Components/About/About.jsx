@@ -24,10 +24,11 @@ function About() {
           requestAnimationFrame(() => smoothScrolling());
       else{
           app.current.style.position = "relative"
-      }
-      
-      return ()=>{
-        document.body.style.height = 0
+        }
+        
+        return ()=>{
+          // document.body.style.height = 0
+          window.scrollTo(0, 0);
       }
 
   }, []);
