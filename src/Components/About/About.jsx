@@ -27,7 +27,7 @@ function About() {
         }
         
         return ()=>{
-          // document.body.style.height = 0
+          document.body.style.height = 0
           window.scrollTo(0, 0);
       }
 

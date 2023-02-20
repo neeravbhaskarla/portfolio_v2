@@ -29,8 +29,8 @@ const Home = () =>{
         
         //Resetting the height to 0
         return ()=>{
+            document.body.style.height = 0
             window.scrollTo(0, 0);
-            // document.body.style.height = 0
         }
     }, []);
 
