@@ -5,6 +5,8 @@ import HeadingCircle from './HeadingCircle'
 import './About.scss'
 import useWindowSize from '../../Hooks/useWindowSize'
 import FooterField from '../FooterField/FooterField'
+import {experiences} from '../../Data/Experience'
+import ExperienceSection from './ExperienceSection/ExperienceSection'
 
 function About() {
 
@@ -100,6 +102,46 @@ function About() {
                 </div>
                 <div className="wrapper-bottom"></div>
               </div>    
+            </div>
+
+            <div className="experience-wrapper">
+              <div className="experience-flex">
+                <div className="top-wrapper"></div>
+                <div className="middle-wrapper">
+                  <div className="experience-grid">
+
+                    <div className="title">
+                      <span>EXPERIENCE / EDUCATION</span>
+                    </div>
+
+                    <div className="period-flex">
+                      <div className="start-period">
+                        <span>2023</span>
+                      </div>
+                      <div className="end-period">
+                        <span>2017 -</span>
+                      </div>
+                    </div>
+
+                    <div className="experience-sections">
+                      {experiences.map(experience => (
+                        <div className='experience-section'>
+                          <ExperienceSection 
+                            key={experience.id}
+                            periodStart={experience.periodStart}
+                            periodEnd={experience.periodEnd}
+                            name={experience.name}
+                            description={experience.description}/>
+                        </div>
+                        ))
+                      }
+                    </div>
+
+                    <div className="end-blank"></div>
+                  </div>
+                </div>
+                <div className="bottom-wrapper"></div>
+              </div>
             </div>
 
             <FooterField path="/projects" name="Projects" requiredNav/>

@@ -9,32 +9,24 @@ function Projects() {
 
   // const projects = useSelector(state => state.projects);
   const [index, setIndex] = useState(0);
-  const [triggerEffect, setTriggerEffect] = useState(true);
   
   const imageRef = useRef(null);
   const descRef = useRef(null);
   const nameRef = useRef(null);
-
-  useEffect(()=>{
-    let timeout = setTimeout(()=>{
-      setTriggerEffect(false)
-    }, 200)
-    return ()=>clearTimeout(timeout);
-  }, [triggerEffect])
   
   const incrementIndex = () =>{
     if(index < projects.length-1){
       imageRef.current.style.transform = "translateX(-105%)"
       nameRef.current.style.opacity = 0
       descRef.current.style.opacity = 0
-      
       const transistionTimeout = setTimeout(()=>{
         setIndex(index+1)
         imageRef.current.style.transform = "translateX(0%)"
         nameRef.current.style.opacity = 1
         descRef.current.style.opacity = 1
+        setInTransition(false)
         clearTimeout(transistionTimeout)
-      }, 800)
+      }, 1000)
     }
   }
   const decrementIndex = () =>{
@@ -42,14 +34,15 @@ function Projects() {
       imageRef.current.style.transform = "translateX(-105%)"
       nameRef.current.style.opacity = 0
       descRef.current.style.opacity = 0
-      
+  
       const transistionTimeout = setTimeout(()=>{
         setIndex(index-1)
         imageRef.current.style.transform = "translateX(0%)"
         nameRef.current.style.opacity = 1
         descRef.current.style.opacity = 1
         clearTimeout(transistionTimeout)
-      }, 800)
+
+      }, 1000)
     }
   }
   return (

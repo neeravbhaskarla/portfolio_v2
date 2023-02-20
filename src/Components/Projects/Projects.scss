@@ -1,7 +1,7 @@
 @import '../../styles/Utils/Variables.scss';
 
 .addBorder{
-    border: 1px solid $secondary-color;
+    border: 0.3px solid $secondary-color;
 }
 .c-flex{
     display: flex;
@@ -42,7 +42,7 @@
             // @extend .addBorder;
             height: 70vh;
             width: 100%;
-            border-top: 1px solid $secondary-color;
+            border-top: 0.3px solid $secondary-color;
             img{
                 height: 99.9%;
                 width: 100%;
@@ -200,7 +200,7 @@
         &-left{
             height: 6vh;
             border-bottom: 0 !important;
-            border-right: 1px solid $secondary-color !important;
+            border-right: 0.3px solid $secondary-color !important;
             padding-left: 10px !important;
             span{
                 font-size: 1rem !important;
@@ -213,6 +213,8 @@
                     width: 30px;
                 }
                 transition: none !important;
+                border-right: 0.3px solid $secondary-color !important;
+                margin-right: 0.3px;
                 &:hover{
                     opacity: 1 !important;
                 }
