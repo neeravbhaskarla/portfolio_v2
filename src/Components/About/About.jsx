@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {motion} from 'framer-motion'
 
 import HeadingCircle from './HeadingCircle'
@@ -21,23 +21,32 @@ function About() {
       previous: 0,
       rounded: 0
   };
+
+  const [freeze, setFreeze] = useState(true)
+
   useEffect(() => {
-      if(size.width>450)
-          requestAnimationFrame(() => smoothScrolling());
+      if(size.width>450){
+        requestAnimationFrame(() => smoothScrolling());
+      }
       else{
           app.current.style.position = "relative"
-        }
-        
-        return ()=>{
-          document.body.style.height = 0
-          window.scrollTo(0, 0);
       }
 
+      const timeout = setTimeout(()=>{
+        setFreeze(false)
+      }, 3000)
+
+      return ()=>{
+        document.body.style.height = 0
+        window.scrollTo(0, 0);
+        clearTimeout(timeout)
+      }
   }, []);
 
   useEffect(() => {
-      setBodyHeight();
-  }, [size.height]);
+      if(!freeze)
+        setBodyHeight();
+  }, [size.height, freeze]);
   const setBodyHeight = () => {
       if(size.width>450)
           document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
@@ -62,7 +71,10 @@ function About() {
   return (
     <div id="smooth-wrapper" ref={app}>
       <div id="smooth-content" ref={scrollContainer}>
-        <div className="about-wrapper">
+        <motion.div className="about-wrapper"
+                    initial={{opacity: 1}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0, transition: {duration: 0.8, ease: "linear"}}}>
             <motion.div className="about-main-page"
                       initial={{opacity: 0}}
                       animate={{opacity: 1}}
@@ -145,7 +157,7 @@ function About() {
             </div>
 
             <FooterField path="/projects" name="Projects" requiredNav/>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

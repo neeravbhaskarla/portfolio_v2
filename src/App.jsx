@@ -6,7 +6,7 @@ import React, {useEffect, useState, lazy, Suspense} from 'react'
 import Loading from './Components/Loading/Loading'
 import { motion, AnimatePresence } from 'framer-motion'
 import {useDispatch, useSelector} from 'react-redux'
-import { useLocation } from 'react-router-dom';
+import { Navigate, redirect, useLocation } from 'react-router-dom';
 
 import { MainWebsite } from './Components/MainWebsite';
 import { fetchProjects } from "./Redux/ProjectSlice";
@@ -74,7 +74,7 @@ const App = () =>{
         transition={{delay: 0.4 ,duration: 0.8}}>
           <NavBar key="navbar"/>
       </motion.div>}
-      
+      {loading && location.pathname !== '/' ? <Navigate to="/" replace/>: null}
       <div>
         <div>
             <AnimatePresence>

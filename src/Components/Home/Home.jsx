@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import {motion} from 'framer-motion'
 import { useSelector } from 'react-redux'
 import FooterField from '../FooterField/FooterField'
@@ -8,6 +8,7 @@ import useWindowSize from "../../Hooks/useWindowSize";
 import "./Home.scss"
 
 const Home = () =>{
+    const [freeze, setFreeze] = useState(true)
 
     // For Smooth Scroll
     const size = useWindowSize();
@@ -26,7 +27,11 @@ const Home = () =>{
         else{
             app.current.style.position = "relative"
         }
-        
+        // Page freezing until animation is completed.
+        const timeout = setTimeout(()=>{
+            setFreeze(false)
+        }, 3000)
+
         //Resetting the height to 0
         return ()=>{
             document.body.style.height = 0
@@ -35,8 +40,11 @@ const Home = () =>{
     }, []);
 
     useEffect(() => {
-        setBodyHeight();
-    }, [size.height]);
+        // If the page is not freezed only the scroll (smooth-scroll) will work
+        if(!freeze)
+            setBodyHeight();
+    }, [size.height, freeze]);
+
     const setBodyHeight = () => {
         if(size.width>450)
             document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`;
@@ -65,7 +73,11 @@ const Home = () =>{
     return (
         <div id="smooth-wrapper" ref={app}>
             <div id="smooth-content" ref={scrollContainer}>
-                <div className="home-wrapper">
+                <motion.div key="home-page"
+                    className="home-wrapper"
+                    initial={{opacity: 1}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0, transition: {duration: 0.8, ease: "linear"}}}>
                     <motion.div className="home-main-page"
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}
@@ -169,7 +181,7 @@ const Home = () =>{
                         </div>
                     </div>
                     <FooterField name="About Me" path="/about" requiredNav/>
-                </div>
+                </motion.div>
             </div>
         </div>
     )
