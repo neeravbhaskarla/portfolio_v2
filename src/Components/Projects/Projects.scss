@@ -50,6 +50,9 @@
                 transform: translateX(0%);
                 transition: transform 0.8s ease;
             }
+            &:hover{
+                cursor: pointer;
+            }
         }
         &-right{
             @extend .addBorder;

@@ -9,7 +9,7 @@ function Projects() {
 
   // const projects = useSelector(state => state.projects);
   const [index, setIndex] = useState(0);
-  
+
   const imageRef = useRef(null);
   const descRef = useRef(null);
   const nameRef = useRef(null);
@@ -41,10 +41,10 @@ function Projects() {
         nameRef.current.style.opacity = 1
         descRef.current.style.opacity = 1
         clearTimeout(transistionTimeout)
-
       }, 1000)
     }
   }
+  
   return (
           <div className="projects-wrapper">
             <motion.div className="projects-main-page"
@@ -56,7 +56,8 @@ function Projects() {
                   </div>
                   <div className="project-main">
                     <div className="project-main-left">
-                      <img src={projects[index].imageURL} alt="" ref={imageRef}/>
+                      <img src={projects[index].imageURL} alt="" ref={imageRef}
+                            onClick={()=>window.open(projects[index].url, '_blank')}/>
                     </div>
                     <div className="project-main-right">
                       <div className="content">
