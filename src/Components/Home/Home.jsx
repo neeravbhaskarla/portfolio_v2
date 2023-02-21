@@ -30,12 +30,13 @@ const Home = () =>{
         // Page freezing until animation is completed.
         const timeout = setTimeout(()=>{
             setFreeze(false)
-        }, 3000)
+        }, 2000)
 
         //Resetting the height to 0
         return ()=>{
             document.body.style.height = 0
             window.scrollTo(0, 0);
+            clearTimeout(timeout)
         }
     }, []);
 

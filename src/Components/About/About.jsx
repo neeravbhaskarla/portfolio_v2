@@ -34,7 +34,7 @@ function About() {
 
       const timeout = setTimeout(()=>{
         setFreeze(false)
-      }, 3000)
+      }, 2000)
 
       return ()=>{
         document.body.style.height = 0
