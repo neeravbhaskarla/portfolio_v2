@@ -9,7 +9,7 @@ export const experiences = [
     {
         id: 'exp-2',
         periodStart: '2022',
-        periodEnd: '2023',
+        periodEnd: 'Present',
         name: 'ASSISTANT SYSTEMS ENGINEER',
         description: 'WORKING AS ASE IN TCS'
     }
