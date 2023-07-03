@@ -10,7 +10,7 @@ export const experiences = [
         id: 'exp-2',
         periodStart: '2022',
         periodEnd: 'Present',
-        name: 'Sotware Developer',
-        description: "Working on diverse projects that encompass a wide range of cutting-edge technologies. These projects have included the utilization of ReactJS and NextJS for frontend development, Spring Boot for backend development, implementation of REST APIs, and the application of various DevOps technologies."
+        name: 'Software Developer',
+        description: "Working on a wide range of projects, leveraging my expertise in ReactJS and NextJS for frontend development, as well as employing Spring Boot, REST APIs, and various DevOps technologies to ensure seamless execution"
     }
 ]
