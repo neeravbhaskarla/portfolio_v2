@@ -10,7 +10,7 @@ export const experiences = [
         id: 'exp-2',
         periodStart: '2022',
         periodEnd: 'Present',
-        name: 'FREELANCING',
-        description: 'WORKING ON DIFFERENT PROJECTS INVOLVING TECHNOLOGIES SUCH AS REACTJS, HTML, CSS, JAVASCRIPT, WORDPRESS AND OTHER JAVASCRIPT FRAMEWORKS'
+        name: 'Sotware Developer',
+        description: "Working on diverse projects that encompass a wide range of cutting-edge technologies. These projects have included the utilization of ReactJS and NextJS for frontend development, Spring Boot for backend development, implementation of REST APIs, and the application of various DevOps technologies."
     }
 ]
