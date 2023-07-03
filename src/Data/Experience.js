@@ -10,7 +10,7 @@ export const experiences = [
         id: 'exp-2',
         periodStart: '2022',
         periodEnd: 'Present',
-        name: 'ASSISTANT SYSTEMS ENGINEER',
-        description: 'WORKING AS ASE IN TCS'
+        name: 'Freelancing',
+        description: 'WORKING AND DEVELOPING VARIOUS PROGRAMMING TASKS INCLUDING HTML, CSS, JAVASCRIPT AND OTHER FRAMEWORKS'
     }
 ]
