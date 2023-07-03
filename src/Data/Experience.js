@@ -10,7 +10,7 @@ export const experiences = [
         id: 'exp-2',
         periodStart: '2022',
         periodEnd: 'Present',
-        name: 'Freelancing',
-        description: 'WORKING AND DEVELOPING VARIOUS PROGRAMMING TASKS INCLUDING HTML, CSS, JAVASCRIPT AND OTHER FRAMEWORKS'
+        name: 'FREELANCING',
+        description: 'WORKING ON DIFFERENT PROJECTS INVOLVING TECHNOLOGIES SUCH AS REACTJS, HTML, CSS, JAVASCRIPT, WORDPRESS AND OTHER JAVASCRIPT FRAMEWORKS'
     }
 ]
