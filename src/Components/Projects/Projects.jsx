@@ -50,7 +50,7 @@ function Projects() {
             <motion.div className="projects-main-page"
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
-                transition={{delay: 1.8, duration: 1, ease: "linear"}}>
+                transition={{delay: 1.3, duration: 1.5, ease: "linear"}}>
                   <div className="project-header">
                     <span>PROJECTS</span>
                   </div>
