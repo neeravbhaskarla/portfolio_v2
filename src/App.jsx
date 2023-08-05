@@ -17,7 +17,7 @@ import './styles/App.scss'
 import NavBar from './Components/NavBar/NavBar';
 
 const App = () =>{
-  
+
 
   // // For Smooth Scrolling
   // const el = useRef();
@@ -27,7 +27,7 @@ const App = () =>{
   // useLayoutEffect(() => {
   //   let smoother = ScrollSmoother.create({
   //     smooth: 1,
-  //     effects: true 
+  //     effects: true
   //   });
   //   return () => {
   //     smoother.kill();
@@ -37,7 +37,7 @@ const App = () =>{
 
   // Redux Dispatch Events
   const dispatch = useDispatch()
-  
+
   useEffect(()=>{
     dispatch(fetchProjects())
     dispatch(fetchSkills())
@@ -47,7 +47,7 @@ const App = () =>{
   const skillLoading = useSelector((state)=>state.skills.loading)
   const projectsLoading = useSelector((state)=>state.projects.loading)
   const [pagesLoaded, setPagesLoaded] = useState(true)
-  
+
   // Checking if both API's are being fetched
   const [loading, setLoading] = useState(true)
 
@@ -58,7 +58,7 @@ const App = () =>{
         clearInterval(checkLoading);
       }
     }, 4000);
-  
+
     return () => clearInterval(checkLoading);
   }, [skillLoading, projectsLoading]);
 
@@ -66,10 +66,10 @@ const App = () =>{
 
   return(
     <>
-      {!loading && 
-      <motion.div 
+      {!loading &&
+      <motion.div
         style={{position: "fixed", zIndex: 999}}
-        initial={{opacity: 0}}  
+        initial={{opacity: 0}}
         animate={{opacity: 1}}
         transition={{delay: 0.4 ,duration: 0.8}}>
           <NavBar key="navbar"/>
@@ -78,11 +78,11 @@ const App = () =>{
       <div>
         <div>
             <AnimatePresence>
-              {(location.pathname === '/' && loading) ? <motion.div 
+              {(location.pathname === '/' && loading) ? <motion.div
                     key="load"
                     style={{position: "fixed", zIndex: 999}}
-                    initial={{y: "0%"}}  
-                    animate={{y: "0%"}}  
+                    initial={{y: "0%"}}
+                    animate={{y: "0%"}}
                     exit={{y:"-100%", transition:{delay: 1 ,duration: 1,  ease:"easeOut"}}}>
                       <Loading images={IMAGES}/>
                   </motion.div>

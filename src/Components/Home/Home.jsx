@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux'
 import FooterField from '../FooterField/FooterField'
 import {skills} from '../../Data/SkillsData'
 import useWindowSize from "../../Hooks/useWindowSize";
-
+import { Canvas } from '@react-three/fiber'
+import { Environment, OrthographicCamera } from '@react-three/drei';
+import {Room} from '../Model/Room'
 import "./Home.scss"
 
 const Home = () =>{
@@ -71,6 +73,14 @@ const Home = () =>{
     const languages = skills.languages;
     const frameworks = skills.frameworks;
     const backend = skills.backend
+    const DirLight = () =>{
+        return(
+            <>
+                <directionalLight position={[50, 40, 100]} intensity={0.45}/>
+                <directionalLight position={[0, 8, 8]} intensity={1} color={0xF5EFDF}/>
+            </>
+        )
+    }
     return (
         <div id="smooth-wrapper" ref={app}>
             <div id="smooth-content" ref={scrollContainer}>
@@ -79,6 +89,16 @@ const Home = () =>{
                     initial={{opacity: 1}}
                     animate={{opacity: 1}}
                     exit={{opacity: 0, transition: {duration: 0.8, ease: "linear"}}}>
+                    <motion.div className='room-gltf' key="room-gltf"
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: 1.8, duration: 1, ease: "linear"}}>
+                            <Canvas>
+                                <OrthographicCamera makeDefault zoom={40} position={[0, 5, 15]}/>
+                                <DirLight/>
+                                <Room/>
+                            </Canvas>
+                    </motion.div>
                     <motion.div className="home-main-page"
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}
@@ -125,12 +145,12 @@ const Home = () =>{
                                 <div className="marquee-container">
                                     <div className="marquee">
                                             {
-                                                languages.map((language)=>(    
+                                                languages.map((language)=>(
                                                     <span key={language}>{language}</span>
                                                 ))
                                             }
                                             {
-                                                languages.map((language)=>(    
+                                                languages.map((language)=>(
                                                     <span key={language}>{language}</span>
                                                 ))
                                             }
@@ -141,12 +161,12 @@ const Home = () =>{
                                 <div className="marquee-container">
                                     <div className="marquee">
                                             {
-                                                frameworks.map((framework)=>(    
+                                                frameworks.map((framework)=>(
                                                     <span key={framework}>{framework}</span>
                                                 ))
                                             }
                                             {
-                                                frameworks.map((framework)=>(    
+                                                frameworks.map((framework)=>(
                                                     <span key={framework}>{framework}</span>
                                                 ))
                                             }
@@ -157,12 +177,12 @@ const Home = () =>{
                                 <div className="marquee-container">
                                     <div className="marquee">
                                             {
-                                                backend.map((backend)=>(    
+                                                backend.map((backend)=>(
                                                     <span key={backend}>{backend}</span>
                                                 ))
                                             }
                                             {
-                                                backend.map((backend)=>(    
+                                                backend.map((backend)=>(
                                                     <span key={backend}>{backend}</span>
                                                 ))
                                             }
