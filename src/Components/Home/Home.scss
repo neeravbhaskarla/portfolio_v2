@@ -2,7 +2,14 @@
 
 
 $left-padding: 50px;
-
+.room-gltf{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    left: 20%;
+    top: -2.5%;
+}
 .ca-flex{
     display: flex;
     align-items: center;
@@ -18,13 +25,13 @@ $left-padding: 50px;
     z-index: 0;
     position: relative;
     background-color: $primary-color;
-    color: $secondary-color;    
+    color: $secondary-color;
     .home-main-page{
         height: 100vh;
         width: 100vw;
         display: grid;
         grid-template-rows: 0.5fr 2fr 1fr;
-        
+
         .name-logo{
             @extend .ca-flex;
             padding-left: $left-padding;
@@ -33,7 +40,7 @@ $left-padding: 50px;
                 font-weight: 400;
             }
         }
-        
+
         .main-role{
             .role-wrapper{
                 @extend .ca-flex;
@@ -42,18 +49,19 @@ $left-padding: 50px;
                 max-width: 900px;
                 span{
                     font-size: 6rem;
-                    font-weight: 600;
+                    font-weight: 600;;
+                    z-index: 1;
                 }
             }
         }
-        
+
         .footer{
             display: grid;
             grid-template-columns: 1fr 1.5fr;
             .box1{
                 display: grid;
                 grid-template-rows: 1.5fr 1fr;
-            
+
                 .box1-up{
                     @extend .ca-flex;
                     padding-left: $left-padding;
@@ -69,12 +77,13 @@ $left-padding: 50px;
                     }
                 }
             }
-            
+
             .box2{
                 display: flex;
                 align-items: center;
                 justify-content: end;
                 padding-right: $left-padding;
+                z-index: 1;
                 span{
                     font-size: 6rem;
                     font-weight: 600;
@@ -151,7 +160,7 @@ $left-padding: 50px;
         overflow: hidden;
         width: 100vw;
     }
-    
+
     .marquee {
         animation: marquee 10s linear infinite;
         width: 200vw;
@@ -201,7 +210,7 @@ $left-padding: 50px;
             font-size: 1rem !important;
         }
     }
-    
+
     .main-role{
         .role-wrapper{
             align-items: end !important;
@@ -227,7 +236,7 @@ $left-padding: 50px;
         &-content{
             span{
                 svg{
-                    height: 30px !important; 
+                    height: 30px !important;
                 }
             }
         }
@@ -269,7 +278,7 @@ $left-padding: 50px;
             font-size: 0.6rem !important;
         }
     }
-    
+
     .main-role{
         .role-wrapper{
             padding-left: 30px !important;
@@ -288,7 +297,7 @@ $left-padding: 50px;
         grid-template-rows: 0.1fr 1fr !important;
         grid-template-columns: 1fr !important;
     }
-    
+
     .box1{
         grid-row: 2/2;
     }
