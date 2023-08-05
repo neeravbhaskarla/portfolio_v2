@@ -5,7 +5,7 @@ import FooterField from '../FooterField/FooterField'
 import {skills} from '../../Data/SkillsData'
 import useWindowSize from "../../Hooks/useWindowSize";
 import { Canvas } from '@react-three/fiber'
-import { Environment, OrthographicCamera } from '@react-three/drei';
+import { OrthographicCamera } from '@react-three/drei';
 import {Room} from '../Model/Room'
 import "./Home.scss"
 
