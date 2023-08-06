@@ -13,7 +13,6 @@ export function Room(props) {
     useFrame(({mouse})=>{
             if(window.innerWidth > 1265){
                 group.current.rotation.y = MathUtils.lerp(group.current.rotation.y, -mouse.x * 0.09 , 0.025)
-                group.current.rotation.z = MathUtils.lerp(group.current.rotation.z, -mouse.y * 0.05 , 0.025)
             }
         })
 

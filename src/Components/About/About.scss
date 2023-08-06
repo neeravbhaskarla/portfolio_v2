@@ -29,7 +29,7 @@
             @extend .c-flex;
             span{
                 font-size: 0.6rem;
-                font-weight: 200;
+                font-weight: 400;
             }
             margin-bottom: 10px;
         }
@@ -111,7 +111,7 @@
                 border: 0.2px solid $secondary-color;
                 border-left: 0;
                 border-right: 0;
-                
+
                 display: grid;
                 grid-template-rows: 1fr;
                 grid-template-columns: 0.7fr 1.3fr 1fr 0.1fr;
@@ -140,7 +140,7 @@
                         }
                     }
                     .start-period{
-                        
+
                     }
                     .end-period{
                         span{
@@ -163,7 +163,7 @@
                     }
                 }
                 .end-blank{
-                    
+
                 }
             }
         }
@@ -180,7 +180,7 @@
             .middle-wrapper{
                 .experience-grid{
                     border: 0 !important;
-    
+
                     grid-template-rows: 0.8fr 1fr 1fr 1fr !important;
                     grid-template-columns: 1fr !important;
                     .title{
@@ -229,7 +229,7 @@
 @media (max-width: $mobile-size) {
     .about-landing-title{
         span{
-            font-size: 0.2rem !important;
+            font-size: 0.5rem !important;
         }
     }
     .about-landing-quote{
@@ -277,7 +277,7 @@
         }
     }
 
-    // Experience 
+    // Experience
     .experience-wrapper{
         .experience-flex{
             display: flex;
@@ -330,7 +330,7 @@
                         border: 0 !important;
                         display: flex;
                         flex-direction: column-reverse;
-                        
+
                         padding: 30px;
                         padding-bottom: 0px;
                         padding-top: 0px !important;
