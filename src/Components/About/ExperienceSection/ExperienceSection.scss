@@ -29,22 +29,23 @@
   @media (max-width: $mobile-size) {
     .experience-section-wrapper{
       .period{
-        font-size: 0.2rem;
+        font-size: 0.4rem;
         font-weight: 500;
         color: $secondary-color;
         margin-bottom: 10px;
+        letter-spacing: 0.2em;
       }
       .name{
         font-size: 0.6rem;
-        font-weight: 500;
+        font-weight: bold;
         margin-bottom: 10px;
         letter-spacing: 0.1em;
       }
       .description{
-        font-size: 0.2rem !important;
+        font-size: 0.4rem !important;
         font-weight: lighter;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.1em;
         width: 300px;
       }
-    } 
+    }
   }
