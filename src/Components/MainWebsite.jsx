@@ -8,6 +8,7 @@ import {getGPUTier} from 'detect-gpu'
 import { useEffect } from 'react';
 
 export const MainWebsite = () =>{
+    
     useEffect(() => {
         async function getGPUExistOrNot(){
             const gpuInfo = await getGPUTier();
