@@ -4,9 +4,20 @@ import { Routes, Route, Navigate, useLocation} from "react-router-dom";
 import About from './About/About';
 import Projects from './Projects/Projects';
 import { AnimatePresence } from 'framer-motion';
-
+import {getGPUTier} from 'detect-gpu'
+import { useEffect } from 'react';
 
 export const MainWebsite = () =>{
+    useEffect(() => {
+        async function getGPUExistOrNot(){
+            const gpuInfo = await getGPUTier();
+            if(gpuInfo.gpu == undefined){
+                alert("WEBGL is unsuppoted on your browser.")
+            }
+        }
+        getGPUExistOrNot()
+    }, [])
+
     const location = useLocation()
     return(
         <AnimatePresence mode='wait'>

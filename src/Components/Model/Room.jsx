@@ -10,9 +10,9 @@ export function Room(props) {
         actions[names[0]].play()
     }, [actions, names])
 
-    useFrame(({mouse})=>{
+    useFrame(({pointer})=>{
             if(window.innerWidth > 1265){
-                group.current.rotation.y = MathUtils.lerp(group.current.rotation.y, -mouse.x * 0.09 , 0.025)
+                group.current.rotation.y = MathUtils.lerp(group.current.rotation.y, -pointer.x * 0.09 , 0.025)
             }
         })
 
