@@ -40,7 +40,7 @@ function FooterField({requiredNav, ...props}) {
               </div>
             </div>
             <div className="version">
-              <span>&#169;2023</span>
+              <span>&#169;2024</span>
             </div>
           </div>
       </div>
