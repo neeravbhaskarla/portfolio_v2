@@ -128,7 +128,7 @@ function About() {
 
                     <div className="period-flex">
                       <div className="start-period">
-                        <span>2023</span>
+                        <span>2024</span>
                       </div>
                       <div className="end-period">
                         <span>2017 -</span>

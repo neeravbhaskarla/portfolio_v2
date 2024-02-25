@@ -9,6 +9,9 @@
     // -webkit-text-size-adjust: 100%;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
 .main-page{
     position: relative;
     z-index: 10;
